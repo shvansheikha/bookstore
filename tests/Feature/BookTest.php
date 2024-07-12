@@ -61,7 +61,7 @@ class BookTest extends TestCase
     public function test_it_can_store_book()
     {
         $user = User::factory()->create();
-        $author = Author::factory()->create();
+        $author = Author::factory()->for($user)->create();
 
         $payload = [
             'name' => $this->faker->words(3, true),
